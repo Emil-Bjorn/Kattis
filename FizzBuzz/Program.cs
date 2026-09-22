@@ -27,27 +27,27 @@ int[]? ValidateInput(string? input)
 {
     if (input != null)
     {
-            string[] parts = input.Split(" ");
-    if (parts.Length == 3)
-    {
-        int[] numbers = new int[3];
-        for (int i = 0; i < 3; i++)
+        string[] parts = input.Split(" ");
+        if (parts.Length == 3)
         {
-            if (int.TryParse(parts[i], out int number))
+            int[] numbers = new int[3];
+            for (int i = 0; i < 3; i++)
             {
-                numbers[i] = number;
-            } else
-            {
-                Console.WriteLine("Please only include integers");
-                return null;
-            }
-        } 
-        return numbers;
-    } else
-    {
-        Console.WriteLine("Please only include 3 values separated by a single space.");
-        return null;
-    }
+                if (int.TryParse(parts[i], out int number))
+                {
+                    numbers[i] = number;
+                } else
+                {
+                    Console.WriteLine("Please only include integers");
+                    return null;
+                }
+            } 
+            return numbers;
+        } else
+        {
+            Console.WriteLine("Please only include 3 values separated by a single space.");
+            return null;
+        }
     }
     return null;
 }
